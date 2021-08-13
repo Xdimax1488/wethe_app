@@ -9,7 +9,7 @@ class Form extends React.Component{
         return (
             <form onSubmit= {this.props.wetherMetod} style ={{width: '100%', color: 'green',display:'flex'}}>
                 <p style={{ marginLeft: '20px'}}>
-                  <select size="3" multiple name="exclude" >
+                  <select name="exclude" >
                     <option disabled>Выбирете позицыю</option>
                     <option value="current">сейчас</option>
                     <option value="daily">на этой неделе</option>
@@ -17,7 +17,7 @@ class Form extends React.Component{
                   </select>
                 </p>
                 <p>
-                  <select size="3" multiple name="city" >
+                  <select   name="city" >
                     <option disabled>Выберете город</option>
                     <option value="London" >лондон</option>
                     <option value="Moscow">москва</option>

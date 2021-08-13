@@ -1,7 +1,8 @@
 import React from "react";
 import Mean from "./components/mean";
 import Form from "./components/form";
-import Wethe_aut from "./components/wethe _autt";
+import WetheAutt from "./components/wethe _autt";
+import HurlyWeather from "./components/HurlyWeather";
 
 const API_key = "0ba9122c7db41155430fb755e75d71e0";
 const London_API = `https://api.openweathermap.org/data/2.5/onecall?lat=51.30&lon=0.07&appid=${API_key}&lang=ru&units=metric`;
@@ -13,6 +14,8 @@ const Warshawa_API = `https://api.openweathermap.org/data/2.5/onecall?lat=52.13&
 
 class App extends React.Component {
   state={
+    api:undefined,
+    ex:undefined,
     temp:undefined,
     city:undefined,
     pressure: undefined,
@@ -34,14 +37,17 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
    
 
-    if(exclude === "minutely"){
+    //if(exclude === "current"){
     if(city === "London"){
     const api_url = await
     fetch(London_API)
     const date = await api_url.json()
+    console.log(date)
 
   
     this.setState({
+      api:date,
+      ex:exclude,
       temp:date.current.temp,
       city:date.timezone,
       pressure:date.current.pressure,
@@ -59,6 +65,7 @@ class App extends React.Component {
 
   
     this.setState({
+      api:date,
       temp:date.current.temp,
       city:date.timezone,
       pressure:date.current.pressure,
@@ -75,6 +82,7 @@ class App extends React.Component {
 
   
     this.setState({
+      api:date,
       temp:date.current.temp,
       city:date.timezone,
       pressure:date.current.pressure,
@@ -91,6 +99,7 @@ class App extends React.Component {
 
   
     this.setState({
+      api:date,
       temp:date.current.temp,
       city:date.timezone,
       pressure:date.current.pressure,
@@ -101,22 +110,23 @@ class App extends React.Component {
   }
   
 
-}
+//}
   }
   render(){
     return(
       <React.Fragment>
         <Mean/>
         <Form 
-        wetherMetod = {this.gettingWether}
-        positionMetod = {this.getPosition}/>
-        <Wethe_aut
+        wetherMetod = {this.gettingWether}/>
+        <WetheAutt
         temp={this.state.temp}
         city={this.state.city}
         pressure={this.state.pressure}
         error  = {this.state.error}
-        
+        api = {this.state.api}
         />
+        <HurlyWeather api = {this.state.api}
+         exclude = {this.state.ex}/>
       </React.Fragment>
 
       
