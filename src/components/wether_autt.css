@@ -1,0 +1,33 @@
+.current {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+.current__city {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.current__descriptions,
+.current__pressure,
+.current__temp {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.current__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.current__descriptions--text,
+.current__descriptions--item,
+.current__pressure--text,
+.current__pressure--item,
+.current__temp--text,
+.current__temp--item {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

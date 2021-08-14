@@ -1,5 +1,5 @@
 import React from "react";
-import Mean from "./components/mean";
+import Info from "./components/info";
 import Form from "./components/form";
 import WetheAutt from "./components/wethe _autt";
 import HurlyWeather from "./components/HurlyWeather";
@@ -114,10 +114,12 @@ class App extends React.Component {
   }
   render(){
     return(
-      <React.Fragment>
-        <Mean/>
+      <div className="conteiner">
         <Form 
         wetherMetod = {this.gettingWether}/>
+
+        <Info/>
+        
         <WetheAutt
         temp={this.state.temp}
         city={this.state.city}
@@ -127,7 +129,7 @@ class App extends React.Component {
         />
         <HurlyWeather api = {this.state.api}
          exclude = {this.state.ex}/>
-      </React.Fragment>
+      </div>
 
       
 
