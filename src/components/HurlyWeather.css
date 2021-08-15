@@ -60,3 +60,20 @@
 .wether__dailyinformation:hover {
   box-shadow: 0 0 25px white;
 }
+
+@media screen and (max-width: 1200px) {
+  .wether__dailycol,
+  .wether__hourlycol {
+    width: auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  .wether__aut {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .wether__aut {
+    font-size: 1.5rem;
+  }
+}

@@ -8,6 +8,7 @@
 .current__city {
   font-size: 3rem;
   font-weight: 600;
+  text-align: center;
 }
 .current__descriptions,
 .current__pressure,
@@ -30,4 +31,22 @@
 .current__temp--item {
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 520px) {
+  .current__city {
+    font-size: 1.5rem;
+  }
+  .current__descriptions--item {
+    text-align: end;
+  }
+  .current__descriptions--text,
+  .current__descriptions--item,
+  .current__pressure--text,
+  .current__pressure--item,
+  .current__temp--text,
+  .current__temp--item {
+    font-size: 1rem;
+  }
 }

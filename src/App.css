@@ -92,13 +92,29 @@ body {
   display: grid;
   justify-content: center;
 }
-.info__inner{
-    font-size: 4rem;
-    margin: 3rem auto;
-    color:#e04438;
+.info__inner {
+  font-size: 4rem;
+  margin: 3rem auto;
+  color: #e04438;
 }
-.info__iformation{
+.info__iformation {
+  font-size: 2.5rem;
+  margin: 0 auto;
+  color: #0063c0;
+}
+@media screen and (max-width: 810px) {
+  .info__inner {
     font-size: 2.5rem;
-    margin: 0 auto;
-    color:#0063c0
+  }
+  .info__iformation {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .info__inner {
+    display: none;
+  }
+  .info__iformation {
+    color: #e04438;
+  }
 }
