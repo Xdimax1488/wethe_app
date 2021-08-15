@@ -1,4 +1,5 @@
 import React from "react";
+import'./HurlyWeather.css'
 
 class HurlyWeather extends React.Component{
          
@@ -46,18 +47,32 @@ class HurlyWeather extends React.Component{
           });
           console.log(this.props.exclude)
         return(
-            <>
+            <div className="wether">
                 {this.props.exclude === "hourly" &&
                     
                 <div>
-                <div>Погода на ближайшие 48 часов:</div>
-                <div>
+                <div className="wether__aut">Погода на ближайшие 48 часов:</div>
+                <div className="wether__hourly">
                     {hourly?.map((item)=>
-                    <ul>
-                        <li>
-                            {item.day}&nbsp;&nbsp;{item.hour}:00&nbsp;&nbsp;{item.temp}&deg;C &nbsp;&nbsp;<span>{item.img}</span>
-                        </li>
-                    </ul>)}
+                    <div className="wether__hourlycol">
+                      <div className="wether__information">
+                        <div className="wether__information--date">
+                            {item.day}
+                        </div>
+                        <div className="wether__information--hour">
+                          {item.hour}:00
+                        </div>
+                        <div className="wether__information--img">
+                          {item.img}
+                        </div>
+                        
+                        <div className="wether__information--temp">
+                          {item.temp}&deg;C
+                        </div>
+                       
+                      </div>
+                    </div>
+                    )}
                 </div>
                 </div>
     }
@@ -66,22 +81,32 @@ class HurlyWeather extends React.Component{
                  {this.props.exclude === "daily" &&
                     
                   <div>
-                    <div> Погода на ближайшие 7 дней:</div>
-                    <div>
+                    <div className="wether__aut"> Погода на ближайшие 7 дней:</div>
+                    <div className="wether__hourly">
                         {sevenDays?.map((item)=>
-                        <ul>
-                            <li>
-                            {item.day}&nbsp;&nbsp;{item.temp_max}<sup>&deg;C</sup> / {item.temp_min}<sup>&deg;C</sup>
+                        <div className="wether__dailycol">
+                          <div className="wether__dailyinformation">
+                        
+                            <div className="wether__information--date">
+                              {item.day}
+                            </div>
+                            <div className="wether__information--dailytemp">
+                            {item.temp_max}<sup>&deg;C</sup> / {item.temp_min}<sup>&deg;C</sup>
+                            </div>
+                            <div className="wether__information--img">
                              &nbsp;&nbsp;<span>{item.img}</span>
-                            </li>
-                        </ul>
+                             </div>
+                          </div>
+                         </div>
+                            
+                        
                         )}
                         </div>
-                        </div>
+                      </div>
                  }
                 
                 
-            </>
+            </div>
             
         )
     }
